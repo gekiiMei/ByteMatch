@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#C27DFF"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtTitleCard"
+        android:layout_width="363dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="88dp"
+        android:background="#E480FF"
+        android:fontFamily="@font/squartiqa4flight"
+        android:gravity="center"
+        android:shadowColor="#AA53AE"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:shadowRadius="1"
+        android:text="BYTEMATCH"
+        android:textColor="#F2CBFF"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="#C27DFF"
+        android:fontFamily="@font/squartiqa4flight"
+        android:onClick="gotoGame"
+        android:text="START"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#F2CBFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#C27DFF"
+        android:fontFamily="@font/squartiqa4flight"
+        android:text="SCORES"
+        android:textColor="#F2CBFF"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="92dp"
+        android:backgroundTint="#C27DFF"
+        android:fontFamily="@font/squartiqa4flight"
+        android:text="OPTIONS"
+        android:textColor="#F2CBFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
