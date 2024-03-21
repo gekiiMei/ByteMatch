@@ -19,7 +19,8 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Base.Theme.ByteMatch.MainBG">
+            android:theme="@style/Base.Theme.ByteMatch.MainBG"
+            android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

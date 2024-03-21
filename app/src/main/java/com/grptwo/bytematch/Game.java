@@ -1,7 +1,9 @@
 package com.grptwo.bytematch;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -78,6 +80,7 @@ public class Game extends AppCompatActivity {
         Button mainMenu = dialog.findViewById(R.id.btnMainMenu);
         int mins = Math.toIntExact(endTime/1000/60);
         int secs = Math.toIntExact(endTime/1000);
+        CheckScoreAgainstHighest(mins, secs);
         String secsString = secs < 10 ? "0" + String.valueOf(secs) : String.valueOf(secs);
         String timeLeft = String.valueOf(mins) + ":" + secsString;
         TextView finTime = dialog.findViewById(R.id.txtFinTime);
@@ -88,10 +91,27 @@ public class Game extends AppCompatActivity {
             public void onClick(View v) {
                 Intent gameToMain = new Intent(Game.this, MainActivity.class);
                 dialog.dismiss();
+                finish();
                 startActivity(gameToMain);
             }
         });
         dialog.show();
+    }
+
+    public void CheckScoreAgainstHighest(int min, int secs){
+
+        SharedPreferences spRead = getApplicationContext().getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
+        int HighMin = spRead.getInt("HighMin", 0);
+        int HighSecs = spRead.getInt("HighSecs", 0);
+
+        if (min > HighMin || (min == HighMin && secs > HighSecs)){
+            SharedPreferences spWrite = getSharedPreferences("MyUserPrefs", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = spWrite.edit();
+            editor.putInt("HighMin", min);
+            editor.putInt("HighSecs", secs);
+            editor.commit();
+        }
+
     }
 
     public void loseDialog() {
@@ -106,6 +126,7 @@ public class Game extends AppCompatActivity {
             public void onClick(View v) {
                 Intent gameToMain = new Intent(Game.this, MainActivity.class);
                 dialog.dismiss();
+                finish();
                 startActivity(gameToMain);
             }
         });

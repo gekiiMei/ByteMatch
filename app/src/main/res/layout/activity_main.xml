@@ -50,6 +50,7 @@
         android:layout_marginBottom="32dp"
         android:backgroundTint="#C27DFF"
         android:fontFamily="@font/squartiqa4flight"
+        android:onClick="gotoScoreDialog"
         android:text="SCORES"
         android:textColor="#F2CBFF"
         app:layout_constraintBottom_toTopOf="@+id/button3"
@@ -63,10 +64,11 @@
         android:layout_marginBottom="92dp"
         android:backgroundTint="#C27DFF"
         android:fontFamily="@font/squartiqa4flight"
-        android:text="OPTIONS"
+        android:text="HELP"
         android:textColor="#F2CBFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="gotoHelpDialog"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
